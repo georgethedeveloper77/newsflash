@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app_api/newsflash1/helper/data.dart';
 import 'package:news_app_api/newsflash1/helper/widgets.dart';
@@ -44,16 +45,21 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: _loading
             ? Center(
-                child: CircularProgressIndicator(),
+                child: CupertinoActivityIndicator(
+                  radius: 20.0,
+                ),
               )
             : SingleChildScrollView(
+                padding: EdgeInsets.all(5.0),
                 child: Container(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       /// Categories
                       Container(
                         padding: EdgeInsets.symmetric(horizontal: 16),
-                        height: 70,
+                        height: 50,
                         child: ListView.builder(
                             scrollDirection: Axis.horizontal,
                             itemCount: categories.length,
@@ -108,14 +114,14 @@ class CategoryCard extends StatelessWidget {
                     )));
       },
       child: Container(
-        margin: EdgeInsets.only(right: 14),
+        margin: EdgeInsets.only(right: 10),
         child: Stack(
           children: <Widget>[
             ClipRRect(
               borderRadius: BorderRadius.circular(5),
               child: CachedNetworkImage(
                 imageUrl: imageAssetUrl,
-                height: 60,
+                height: 200,
                 width: 120,
                 fit: BoxFit.cover,
               ),

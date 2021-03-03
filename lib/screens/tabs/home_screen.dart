@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Text(
                 "Top channels{A-Z}",
                 style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.red,
                   fontWeight: FontWeight.bold,
                   fontStyle: FontStyle.italic,
                   fontSize: 17.0,
@@ -33,12 +33,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         TopChannelsWidget(),
         SizedBox(
-          child: LinearProgressIndicator(),
+          height: 5.0,
         ),
         adsContainer(),
-        SizedBox(
-          child: LinearProgressIndicator(),
-        ),
         Padding(
           padding: const EdgeInsets.all(10.0),
           child: Row(

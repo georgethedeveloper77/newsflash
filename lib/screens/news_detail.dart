@@ -7,14 +7,18 @@ import 'package:url_launcher/url_launcher.dart';
 
 class DetailNews extends StatefulWidget {
   final ArticleModel article;
+
   DetailNews({Key key, @required this.article}) : super(key: key);
+
   @override
   _DetailNewsState createState() => _DetailNewsState(article);
 }
 
 class _DetailNewsState extends State<DetailNews> {
   final ArticleModel article;
+
   _DetailNewsState(this.article);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,9 +38,10 @@ class _DetailNewsState extends State<DetailNews> {
               Text(
                 "Read More",
                 style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: "SFPro-Bold",
-                    fontSize: 15.0),
+                  color: Colors.black,
+                  fontFamily: "SFPro-Bold",
+                  fontSize: 15.0,
+                ),
               ),
             ],
           ),
@@ -44,7 +49,7 @@ class _DetailNewsState extends State<DetailNews> {
       ),
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Style.Colors.mainColor,
+        backgroundColor: Colors.black,
         title: new Text(
           article.title,
           style: TextStyle(
@@ -60,14 +65,15 @@ class _DetailNewsState extends State<DetailNews> {
           AspectRatio(
             aspectRatio: 16 / 9,
             child: FadeInImage.assetNetwork(
-                alignment: Alignment.topCenter,
-                placeholder: 'images/placeholder.png',
-                image: article.img == null
-                    ? "http://to-let.com.bd/operator/images/noimage.png"
-                    : article.img,
-                fit: BoxFit.cover,
-                width: double.maxFinite,
-                height: MediaQuery.of(context).size.height * 1 / 3),
+              alignment: Alignment.topCenter,
+              placeholder: 'images/placeholder.png',
+              image: article.img == null
+                  ? "http://to-let.com.bd/operator/images/noimage.png"
+                  : article.img,
+              fit: BoxFit.cover,
+              width: double.maxFinite,
+              height: MediaQuery.of(context).size.height * 1 / 3,
+            ),
           ),
           Container(
             padding: EdgeInsets.all(10.0),
@@ -80,10 +86,13 @@ class _DetailNewsState extends State<DetailNews> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text(article.date.substring(0, 10),
-                        style: TextStyle(
-                            color: Style.Colors.mainColor,
-                            fontWeight: FontWeight.bold)),
+                    Text(
+                      article.date.substring(0, 10),
+                      style: TextStyle(
+                        color: Style.Colors.mainColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ],
                 ),
                 SizedBox(
@@ -109,9 +118,13 @@ class _DetailNewsState extends State<DetailNews> {
                 ),
                 Html(
                   data: article.content,
+                  useRichText: true,
                   renderNewlines: true,
-                  defaultTextStyle:
-                      TextStyle(fontSize: 14.0, color: Colors.black87),
+                  defaultTextStyle: TextStyle(
+                    fontSize: 14.0,
+                    color: Colors.black87,
+                    fontStyle: FontStyle.italic,
+                  ),
                 ),
               ],
             ),

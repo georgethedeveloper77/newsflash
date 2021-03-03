@@ -4,6 +4,7 @@ import 'package:news_app_api/elements/loader.dart';
 import 'package:news_app_api/model/article.dart';
 import 'package:news_app_api/model/article_response.dart';
 import 'package:news_app_api/model/source.dart';
+import 'package:news_app_api/newsflash1/helper/widgets.dart';
 import 'package:news_app_api/style/theme.dart' as Style;
 import 'package:timeago/timeago.dart' as timeago;
 
@@ -11,14 +12,18 @@ import 'news_detail.dart';
 
 class SourceDetail extends StatefulWidget {
   final SourceModel source;
+
   SourceDetail({Key key, @required this.source}) : super(key: key);
+
   @override
   _SourceDetailState createState() => _SourceDetailState(source);
 }
 
 class _SourceDetailState extends State<SourceDetail> {
   final SourceModel source;
+
   _SourceDetailState(this.source);
+
   @override
   void initState() {
     super.initState();
@@ -34,19 +39,7 @@ class _SourceDetailState extends State<SourceDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(40.0),
-        child: AppBar(
-            iconTheme: IconThemeData(
-              color: Colors.black,
-            ),
-            centerTitle: false,
-            elevation: 0.0,
-            backgroundColor: Style.Colors.mainColor,
-            title: new Text(
-              "",
-            )),
-      ),
+      appBar: MyAppBar(),
       body: Column(
         children: [
           Container(

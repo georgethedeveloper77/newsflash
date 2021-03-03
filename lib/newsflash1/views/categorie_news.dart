@@ -39,12 +39,12 @@ class _CategoryNewsState extends State<CategoryNews> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "Flutter",
+              "News",
               style:
-                  TextStyle(color: Colors.black87, fontWeight: FontWeight.w600),
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
             ),
             Text(
-              "News",
+              "Flash",
               style: TextStyle(color: Colors.blue, fontWeight: FontWeight.w600),
             )
           ],
@@ -52,6 +52,7 @@ class _CategoryNewsState extends State<CategoryNews> {
         actions: <Widget>[
           Opacity(
             opacity: 0,
+
             child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 child: Icon(
@@ -59,7 +60,7 @@ class _CategoryNewsState extends State<CategoryNews> {
                 )),
           )
         ],
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.black,
         elevation: 0.0,
       ),
       body: _loading

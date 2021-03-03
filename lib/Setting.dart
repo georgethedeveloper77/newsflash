@@ -14,6 +14,7 @@ class Setting extends StatefulWidget {
 class _SettingState extends State<Setting> {
   String _packageName;
   String _version;
+
   @override
   void initState() {
     PackageInfo.fromPlatform().then((PackageInfo packageInfo) {

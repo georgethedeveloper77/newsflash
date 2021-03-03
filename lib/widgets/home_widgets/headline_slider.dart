@@ -45,7 +45,7 @@ class _HeadlingSliderWidgetState extends State<HeadlingSliderWidget> {
         child: CarouselSlider(
             options: CarouselOptions(
               enlargeCenterPage: false,
-              height: 200.0,
+              height: 250.0,
               viewportFraction: 0.9,
             ),
             items: getExpenseSliders(articles)));
@@ -70,7 +70,7 @@ class _HeadlingSliderWidgetState extends State<HeadlingSliderWidget> {
                 children: <Widget>[
                   Container(
                       decoration: new BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
                     shape: BoxShape.rectangle,
                     image: new DecorationImage(
                         fit: BoxFit.cover,
@@ -105,9 +105,9 @@ class _HeadlingSliderWidgetState extends State<HeadlingSliderWidget> {
                               article.title,
                               style: TextStyle(
                                   height: 1.5,
-                                  color: Colors.black,
+                                  color: Colors.white,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 12.0),
+                                  fontSize: 13.0),
                             ),
                           ],
                         ),

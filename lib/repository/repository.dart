@@ -51,7 +51,7 @@ class NewsRepository {
   }
 
   Future<ArticleResponse> getHotNews() async {
-    var params = {"apiKey": apiKey, "q": "apple", "sortBy": "popularity"};
+    var params = {"apiKey": apiKey, "q": "popular", "sortBy": "popularity"};
     try {
       Response response =
           await _dio.get(everythingUrl, queryParameters: params);
@@ -63,7 +63,11 @@ class NewsRepository {
   }
 
   Future<ArticleResponse> getSourceNews(String sourceId) async {
-    var params = {"apiKey": apiKey, "sources": sourceId};
+    var params = {
+      "apiKey": apiKey,
+      "sources": sourceId,
+      "sortBy": "popularity"
+    };
     try {
       Response response =
           await _dio.get(getTopHeadlinesUrl, queryParameters: params);

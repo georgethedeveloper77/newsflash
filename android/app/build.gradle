@@ -79,7 +79,7 @@ dependencies {
 
     implementation 'com.android.support:multidex:1.0.3'
 
-    implementation 'com.google.android.gms:play-services-ads:19.6.0'
+    implementation 'com.google.android.gms:play-services-ads:19.7.0'
 
     // Import the Firebase BoM
     implementation platform('com.google.firebase:firebase-bom:26.2.0')

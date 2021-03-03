@@ -19,7 +19,9 @@ Widget adsContainer() {
       adUnitID: _adUnitID,
       controller: _nativeAdController,
       type: NativeAdmobType.full,
-      error: CupertinoActivityIndicator(),
+      error: CupertinoActivityIndicator(
+        radius: 20.0,
+      ),
     ),
   );
 }

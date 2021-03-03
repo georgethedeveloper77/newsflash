@@ -2,7 +2,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app_api/bloc/bottom_navbar_bloc.dart';
 import 'package:news_app_api/newsflash1/views/homepage.dart';
-import 'package:news_app_api/screens/tabs/ads.dart';
+import 'package:news_app_api/widgets/Payments.dart';
 
 import 'tabs/home_screen.dart';
 import 'tabs/search_screen.dart';
@@ -15,6 +15,7 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   BottomNavBarBloc _bottomNavBarBloc;
+
   @override
   void initState() {
     super.initState();
@@ -55,8 +56,8 @@ class _MainScreenState extends State<MainScreen> {
                 return SourceScreen();
               case NavBarItem.SEARCH:
                 return SearchScreen();
-              case NavBarItem.ADS:
-                return adsContainer();
+              case NavBarItem.PAYMENTS:
+                return Payments();
             }
           },
         ),
@@ -85,6 +86,7 @@ class _MainScreenState extends State<MainScreen> {
                 topRight: Radius.circular(30.0),
               ),
               child: BottomNavigationBar(
+                elevation: 0.0,
                 backgroundColor: Colors.black,
                 iconSize: 28,
                 unselectedItemColor: Colors.blueGrey,
@@ -143,18 +145,6 @@ class _MainScreenState extends State<MainScreen> {
             ),
           );
         },
-      ),
-    );
-  }
-
-  Widget testScreen() {
-    return Container(
-      color: Colors.white,
-      width: MediaQuery.of(context).size.width,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[Text("Test Screen")],
       ),
     );
   }

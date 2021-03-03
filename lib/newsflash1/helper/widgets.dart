@@ -7,16 +7,16 @@ Widget MyAppBar() {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Text(
-          "Flutter",
-          style: TextStyle(color: Colors.black87, fontWeight: FontWeight.w600),
+          "News",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
         ),
         Text(
-          "News",
+          "Flash",
           style: TextStyle(color: Colors.blue, fontWeight: FontWeight.w600),
         )
       ],
     ),
-    backgroundColor: Colors.transparent,
+    backgroundColor: Colors.black,
     elevation: 0.0,
   );
 }
@@ -43,7 +43,9 @@ class NewsTile extends StatelessWidget {
                     )));
       },
       child: Container(
-          margin: EdgeInsets.only(bottom: 24),
+          margin: EdgeInsets.only(
+            bottom: 24,
+          ),
           width: MediaQuery.of(context).size.width,
           child: Container(
             child: Container(

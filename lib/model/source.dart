@@ -7,7 +7,8 @@ class SourceModel {
   final String country;
   final String language;
 
-  SourceModel(this.id, this.name, this.description, this.url, this.category, this.country, this.language);
+  SourceModel(this.id, this.name, this.description, this.url, this.category,
+      this.country, this.language);
 
   SourceModel.fromJson(Map<String, dynamic> json)
       : id = json["id"],
