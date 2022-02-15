@@ -36,6 +36,9 @@ class _HomeScreenState extends State<HomeScreen> {
           height: 5.0,
         ),
         adsContainer(),
+        SizedBox(
+          height: 5.0,
+        ),
         Padding(
           padding: const EdgeInsets.all(10.0),
           child: Row(
@@ -52,8 +55,13 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         HotNewsWidget(),
-        Divider(),
-        adsContainer()
+        SizedBox(
+          height: 5.0,
+        ),
+        adsContainer(),
+        SizedBox(
+          height: 5.0,
+        ),
       ],
     );
   }

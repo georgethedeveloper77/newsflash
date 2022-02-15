@@ -87,8 +87,10 @@ class _MainScreenState extends State<MainScreen> {
                     context: context,
                     builder: (BuildContext context) => CupertinoActionSheet(
                       cancelButton: CupertinoActionSheetAction(
-                        child: Text('Cancel',
-                            style: GoogleFonts.ubuntu(color: Colors.white)),
+                        child: Text(
+                          'Cancel',
+                          style: GoogleFonts.ubuntu(color: Colors.red),
+                        ),
                         onPressed: () {
                           Navigator.pop(context, 'Cancel');
                         },
@@ -104,7 +106,7 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                               Text('Check out other apps',
                                   style:
-                                      GoogleFonts.ubuntu(color: Colors.black)),
+                                      GoogleFonts.ubuntu(color: Colors.white)),
                               Icon(
                                 Icons.arrow_forward_ios,
                                 color: Colors.white,
@@ -284,7 +286,7 @@ class _MainScreenState extends State<MainScreen> {
                     elevation: 0.0,
                     backgroundColor: Colors.black,
                     iconSize: 28,
-                    unselectedItemColor: Colors.blueGrey,
+                    unselectedItemColor: Colors.blue,
                     unselectedFontSize: 9.5,
                     selectedFontSize: 9.5,
                     type: BottomNavigationBarType.shifting,

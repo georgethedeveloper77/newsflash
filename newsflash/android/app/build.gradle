@@ -22,6 +22,7 @@ if (flutterVersionName == null) {
 }
 
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
@@ -47,7 +48,7 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.mindhunter.newsflash"
-        minSdkVersion 24
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
@@ -64,7 +65,10 @@ android {
     }
     buildTypes {
         release {
-            signingConfig signingConfigs.release
+            minifyEnabled true // add this
+            shrinkResources true // add this
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro' // add this
+            signingConfig signingConfigs.release // this is default for release
         }
     }
     ndkVersion "20.1.5948944"

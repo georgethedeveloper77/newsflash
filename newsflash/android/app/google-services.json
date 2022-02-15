@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "587521928292",
+    "firebase_url": "https://newsflash-5290e-default-rtdb.firebaseio.com",
+    "project_id": "newsflash-5290e",
+    "storage_bucket": "newsflash-5290e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587521928292:android:c7ad8995e23083c3804371",
+        "android_client_info": {
+          "package_name": "com.mindhunter.newsflash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "587521928292-87aiht485ijacpqt4smbupke3q974gos.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mindhunter.newsflash",
+            "certificate_hash": "0188b5c467c10acead6674d5e4636081b002b2bf"
+          }
+        },
+        {
+          "client_id": "587521928292-q70ndc44o79c8j9rt9crek1fj92qp2ir.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mindhunter.newsflash",
+            "certificate_hash": "b6e506a8b77d5df6e0e01618c4195be96782172a"
+          }
+        },
+        {
+          "client_id": "587521928292-j322iabjjbe90u99vvagcoihsta19a5v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4Uvy79W6AK_b2z9FqgUATJcRSwFB5d5Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "587521928292-j322iabjjbe90u99vvagcoihsta19a5v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

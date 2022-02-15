@@ -97,9 +97,11 @@ class _TopChannelsWidgetState extends State<TopChannelsWidget> {
                               )
                             ],
                             image: new DecorationImage(
-                                fit: BoxFit.cover,
-                                image: AssetImage(
-                                    "assets/logos/${sources[index].id}.png")),
+                              fit: BoxFit.cover,
+                              scale: 50.0,
+                              image: AssetImage(
+                                  "assets/logos/${sources[index].id}.png"),
+                            ),
                           )),
                     ),
                     SizedBox(
