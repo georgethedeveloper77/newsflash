@@ -1,11 +1,17 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:delayed_display/delayed_display.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:news_app_api/Extras/Licences.dart';
+import 'package:news_app_api/Extras/TC.dart';
+import 'package:news_app_api/Extras/about/about.dart';
 import 'package:news_app_api/bloc/bottom_navbar_bloc.dart';
 import 'package:news_app_api/newsflash1/views/homepage.dart';
+import 'package:share/share.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'tabs/home_screen.dart';
 import 'tabs/search_screen.dart';
@@ -18,6 +24,10 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   BottomNavBarBloc _bottomNavBarBloc;
+
+  final Shader linearGradient = LinearGradient(
+    colors: <Color>[Color(0xFFec2F4B), Color(0xFF009FFF)],
+  ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
 
   @override
   void initState() {
@@ -40,14 +50,18 @@ class _MainScreenState extends State<MainScreen> {
                     style: GoogleFonts.ubuntu()),
                 actions: <Widget>[
                   new FlatButton(
-                    onPressed: () => Navigator.of(context).pop(false),
-                    child: new Text('No',
-                        style: GoogleFonts.ubuntu(color: Colors.white)),
+                    onPressed: () => Navigator.of(context).pop(true),
+                    child: new Text(
+                      'Yes',
+                      style: GoogleFonts.ubuntu(color: Colors.red),
+                    ),
                   ),
                   new FlatButton(
-                    onPressed: () => Navigator.of(context).pop(true),
-                    child: new Text('Yes',
-                        style: GoogleFonts.ubuntu(color: Colors.white)),
+                    onPressed: () => Navigator.of(context).pop(false),
+                    child: new Text(
+                      'No',
+                      style: GoogleFonts.ubuntu(color: Colors.green),
+                    ),
                   ),
                 ],
               ),
@@ -58,19 +72,166 @@ class _MainScreenState extends State<MainScreen> {
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           backgroundColor: Colors.white,
-          appBar: PreferredSize(
-            preferredSize: Size.fromHeight(50.0),
-            child: AppBar(
-              backgroundColor: Colors.black,
-              title: Text(
-                "NewsFlash",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontStyle: FontStyle.italic,
+          appBar: AppBar(
+            elevation: 0,
+            backgroundColor: Color(0xFF121212),
+            actions: <Widget>[
+              DelayedDisplay(
+                slidingCurve: Curves.fastLinearToSlowEaseIn,
+                child: IconButton(
+                  icon: Icon(
+                    Icons.settings,
+                    size: 35.0,
+                  ),
+                  onPressed: () => showCupertinoModalPopup(
+                    context: context,
+                    builder: (BuildContext context) => CupertinoActionSheet(
+                      cancelButton: CupertinoActionSheetAction(
+                        child: Text('Cancel',
+                            style: GoogleFonts.ubuntu(color: Colors.white)),
+                        onPressed: () {
+                          Navigator.pop(context, 'Cancel');
+                        },
+                      ),
+                      actions: <Widget>[
+                        CupertinoActionSheetAction(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Icon(
+                                Icons.zoom_in,
+                                color: Colors.white,
+                              ),
+                              Text('Check out other apps',
+                                  style:
+                                      GoogleFonts.ubuntu(color: Colors.black)),
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                              ),
+                            ],
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                            launch(
+                                "https://play.google.com/store/apps/dev?id=8692038640782019043");
+                          },
+                        ),
+                        CupertinoActionSheetAction(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Icon(
+                                Icons.share,
+                                color: Colors.white,
+                              ),
+                              Text('Share App',
+                                  style:
+                                      GoogleFonts.ubuntu(color: Colors.white)),
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                              ),
+                            ],
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                            Share.share(
+                                'Check out the latest news \n https://play.google.com/store/apps/details?id=com.mindhunter.newsflash',
+                                subject: 'News Flash');
+                          },
+                        ),
+                        CupertinoActionSheetAction(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Icon(
+                                Icons.library_books,
+                                color: Colors.white,
+                              ),
+                              Text(
+                                'Terms and Conditions',
+                                style: GoogleFonts.ubuntu(color: Colors.white),
+                              ),
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                              ),
+                            ],
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                            Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (context) => AppTC()));
+                          },
+                        ),
+                        CupertinoActionSheetAction(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Icon(
+                                Icons.verified_user,
+                                color: Colors.white,
+                              ),
+                              Text('View Licences',
+                                  style:
+                                      GoogleFonts.ubuntu(color: Colors.white)),
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                              ),
+                            ],
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                            Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (context) => AppLicence()));
+                          },
+                        ),
+                        CupertinoActionSheetAction(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Icon(
+                                CupertinoIcons.info,
+                                color: Colors.white,
+                              ),
+                              Text('About',
+                                  style:
+                                      GoogleFonts.ubuntu(color: Colors.white)),
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                              ),
+                            ],
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                            Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (context) => About()));
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ),
-              centerTitle: true,
+            ],
+            title: DelayedDisplay(
+              slidingCurve: Curves.fastLinearToSlowEaseIn,
+              child: Text(
+                "NewsFlash",
+                style: GoogleFonts.ubuntu(
+                    foreground: Paint()..shader = linearGradient,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
           ),
           body: SafeArea(
