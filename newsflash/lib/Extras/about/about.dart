@@ -43,7 +43,7 @@ class _AboutState extends State<About> {
                 padding: const EdgeInsets.only(top: 10.0),
                 child: CachedNetworkImage(
                   imageUrl:
-                      "https://raw.githubusercontent.com/xanf-code/about_me/master/resources/logo.png",
+                      "https://github.com/georgethedeveloper77/newsflash/blob/master/newsflash/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
                   height: 200,
                   width: 200,
                 ),

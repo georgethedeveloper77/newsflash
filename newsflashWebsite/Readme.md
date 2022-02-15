@@ -1,6 +1,6 @@
 google.com, pub-7942045317115165, DIRECT, f08c47fec0942fa0
 
-Name: foodiez
+Name: News
 URL: 
 Author: georgethedeveloper.com
 License:
