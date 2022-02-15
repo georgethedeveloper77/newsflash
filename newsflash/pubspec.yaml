@@ -41,18 +41,19 @@ dependencies:
   flutter_html: ^0.11.1
   url_launcher: ^5.5.0
   facebook_audience_network: ^0.9.0
+  wiredash: ^0.0.1+1
+  splashscreen: ^1.2.0
+  google_fonts: ^1.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

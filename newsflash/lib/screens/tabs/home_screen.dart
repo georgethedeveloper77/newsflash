@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app_api/screens/tabs/ads.dart';
+import 'package:news_app_api/ads/ads.dart';
 import 'package:news_app_api/widgets/home_widgets/headline_slider.dart';
 import 'package:news_app_api/widgets/home_widgets/hot_news.dart';
 import 'package:news_app_api/widgets/home_widgets/top_channels.dart';
