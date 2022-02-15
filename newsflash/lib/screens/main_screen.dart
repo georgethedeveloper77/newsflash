@@ -71,7 +71,7 @@ class _MainScreenState extends State<MainScreen> {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.white70,
           appBar: AppBar(
             elevation: 0,
             backgroundColor: Color(0xFF121212),
@@ -106,7 +106,7 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                               Text('Check out other apps',
                                   style:
-                                      GoogleFonts.ubuntu(color: Colors.white)),
+                                      GoogleFonts.ubuntu(color: Colors.black)),
                               Icon(
                                 Icons.arrow_forward_ios,
                                 color: Colors.white,
@@ -129,7 +129,7 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                               Text('Share App',
                                   style:
-                                      GoogleFonts.ubuntu(color: Colors.white)),
+                                      GoogleFonts.ubuntu(color: Colors.black)),
                               Icon(
                                 Icons.arrow_forward_ios,
                                 color: Colors.white,
@@ -139,8 +139,8 @@ class _MainScreenState extends State<MainScreen> {
                           onPressed: () {
                             Navigator.pop(context);
                             Share.share(
-                                'Check out the latest news \n https://play.google.com/store/apps/details?id=com.mindhunter.newsflash',
-                                subject: 'News Flash');
+                                'Check out the latest news & updates here: \n https://play.google.com/store/apps/details?id=com.mindhunter.newsflash',
+                                subject: 'NewsFlash');
                           },
                         ),
                         CupertinoActionSheetAction(
@@ -153,7 +153,7 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                               Text(
                                 'Terms and Conditions',
-                                style: GoogleFonts.ubuntu(color: Colors.white),
+                                style: GoogleFonts.ubuntu(color: Colors.black),
                               ),
                               Icon(
                                 Icons.arrow_forward_ios,
@@ -179,7 +179,7 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                               Text('View Licences',
                                   style:
-                                      GoogleFonts.ubuntu(color: Colors.white)),
+                                      GoogleFonts.ubuntu(color: Colors.black)),
                               Icon(
                                 Icons.arrow_forward_ios,
                                 color: Colors.white,
@@ -204,7 +204,7 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                               Text('About',
                                   style:
-                                      GoogleFonts.ubuntu(color: Colors.white)),
+                                      GoogleFonts.ubuntu(color: Colors.black)),
                               Icon(
                                 Icons.arrow_forward_ios,
                                 color: Colors.white,

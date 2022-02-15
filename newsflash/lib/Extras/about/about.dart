@@ -1,8 +1,8 @@
-import 'package:news_app_api/Extras/about/change.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_brand_icons/flutter_brand_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:news_app_api/Extras/about/change.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:wiredash/wiredash.dart';
 
@@ -23,10 +23,10 @@ class _AboutState extends State<About> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color(0xFF121212),
+        backgroundColor: Colors.white54,
         appBar: AppBar(
           title: Text(
-            "About AboutMe",
+            "NewsFlash",
             style: GoogleFonts.ubuntu(
                 foreground: Paint()..shader = linearGradient,
                 fontSize: 25,
@@ -49,8 +49,8 @@ class _AboutState extends State<About> {
                 ),
               ),
               Text(
-                'AboutMe Data Privacy',
-                style: GoogleFonts.ubuntu(color: Colors.white54, fontSize: 12),
+                'NewsFlash',
+                style: GoogleFonts.ubuntu(color: Colors.black54, fontSize: 12),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 8.0, right: 8),
@@ -58,7 +58,7 @@ class _AboutState extends State<About> {
                   width: MediaQuery.of(context).size.width,
                   height: 190,
                   child: Card(
-                    color: Color(0xFF050a10),
+                    color: Colors.white54,
                     child: Padding(
                       padding: const EdgeInsets.only(
                           top: 20.0, left: 15, bottom: 20),
@@ -68,15 +68,15 @@ class _AboutState extends State<About> {
                             children: [
                               Icon(
                                 Icons.update,
-                                color: Colors.white,
+                                color: Colors.black,
                                 size: 30,
                               ),
                               SizedBox(
                                 width: 22,
                               ),
-                              Text("Version : v1.0.0",
+                              Text("Version : v3.0.0",
                                   style: GoogleFonts.ubuntu(
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       fontSize: 18,
                                       fontWeight: FontWeight.w300)),
                             ],
@@ -87,21 +87,21 @@ class _AboutState extends State<About> {
                           InkWell(
                             onTap: () {
                               launch(
-                                  "https://play.google.com/store/apps/details?id=com.mindhunter.aboutme");
+                                  "https://play.google.com/store/apps/details?id=com.mindhunter.newsflash");
                             },
                             child: Row(
                               children: [
                                 Icon(
                                   Icons.star,
                                   size: 30,
-                                  color: Colors.white,
+                                  color: Colors.black,
                                 ),
                                 SizedBox(
                                   width: 22,
                                 ),
                                 Text("Rate this app",
                                     style: GoogleFonts.ubuntu(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 18,
                                         fontWeight: FontWeight.w300)),
                               ],
@@ -119,14 +119,14 @@ class _AboutState extends State<About> {
                                 Icon(
                                   Icons.bug_report,
                                   size: 30,
-                                  color: Colors.white,
+                                  color: Colors.black,
                                 ),
                                 SizedBox(
                                   width: 22,
                                 ),
                                 Text("Feedback",
                                     style: GoogleFonts.ubuntu(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 18,
                                         fontWeight: FontWeight.w300)),
                               ],
@@ -144,7 +144,7 @@ class _AboutState extends State<About> {
                   width: MediaQuery.of(context).size.width,
                   height: 170,
                   child: Card(
-                    color: Color(0xFF050a10),
+                    color: Colors.white54,
                     child: Padding(
                       padding: const EdgeInsets.only(
                           top: 20.0, left: 15, bottom: 20),
@@ -155,7 +155,7 @@ class _AboutState extends State<About> {
                             child: Text(
                               "About",
                               style: GoogleFonts.ubuntu(
-                                  color: Colors.white, fontSize: 15),
+                                  color: Colors.black, fontSize: 15),
                             ),
                           ),
                           SizedBox(
@@ -167,7 +167,7 @@ class _AboutState extends State<About> {
                               children: [
                                 Icon(
                                   Icons.track_changes,
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   size: 30,
                                 ),
                                 SizedBox(
@@ -175,7 +175,7 @@ class _AboutState extends State<About> {
                                 ),
                                 Text("Changelog",
                                     style: GoogleFonts.ubuntu(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 18,
                                         fontWeight: FontWeight.w300)),
                               ],
@@ -191,14 +191,14 @@ class _AboutState extends State<About> {
                                 Icon(
                                   BrandIcons.github,
                                   size: 25,
-                                  color: Colors.white,
+                                  color: Colors.black,
                                 ),
                                 SizedBox(
                                   width: 22,
                                 ),
                                 Text("Open source libraries used",
                                     style: GoogleFonts.ubuntu(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 18,
                                         fontWeight: FontWeight.w300)),
                               ],
@@ -216,7 +216,7 @@ class _AboutState extends State<About> {
                   width: MediaQuery.of(context).size.width,
                   height: 230,
                   child: Card(
-                    color: Color(0xFF050a10),
+                    color: Colors.white54,
                     child: Padding(
                       padding: const EdgeInsets.only(
                           top: 20.0, left: 15, bottom: 20),
@@ -227,19 +227,20 @@ class _AboutState extends State<About> {
                             child: Text(
                               "Author",
                               style: GoogleFonts.ubuntu(
-                                  color: Colors.white, fontSize: 15),
+                                  color: Colors.black, fontSize: 15),
                             ),
                           ),
                           SizedBox(
                             height: 20,
                           ),
                           InkWell(
-                            onTap: ()=> launch("https://github.com/xanf-code"),
+                            onTap: () =>
+                                launch("https://georgethedeveloper.tech"),
                             child: Row(
                               children: [
                                 Icon(
                                   Icons.supervisor_account,
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   size: 30,
                                 ),
                                 SizedBox(
@@ -247,7 +248,7 @@ class _AboutState extends State<About> {
                                 ),
                                 Text("mindBerzerk",
                                     style: GoogleFonts.ubuntu(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 18,
                                         fontWeight: FontWeight.w300)),
                               ],
@@ -256,7 +257,7 @@ class _AboutState extends State<About> {
                           SizedBox(
                             height: 25,
                           ),
-                          InkWell(
+                          /*InkWell(
                             onTap: () {
                               launch("https://github.com/xanf-code/about_me");
                             },
@@ -265,38 +266,38 @@ class _AboutState extends State<About> {
                                 Icon(
                                   BrandIcons.github,
                                   size: 25,
-                                  color: Colors.white,
+                                  color: Colors.black,
                                 ),
                                 SizedBox(
                                   width: 22,
                                 ),
                                 Text("Fork on GithHub",
                                     style: GoogleFonts.ubuntu(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 18,
                                         fontWeight: FontWeight.w300)),
                               ],
                             ),
-                          ),
-                          SizedBox(
+                          ),*/
+                          /*SizedBox(
                             height: 25,
-                          ),
+                          ),*/
                           InkWell(
                             onTap: () => launch(
-                                "mailto:darshanaswath@gmail.com?subject=AboutMe App"),
+                                "mailto:mindberzerkcustomerservice@gmail.com?subject=News App"),
                             child: Row(
                               children: [
                                 Icon(
                                   Icons.email,
                                   size: 30,
-                                  color: Colors.white,
+                                  color: Colors.black,
                                 ),
                                 SizedBox(
                                   width: 22,
                                 ),
                                 Text("Send Email",
                                     style: GoogleFonts.ubuntu(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 18,
                                         fontWeight: FontWeight.w300)),
                               ],
@@ -314,7 +315,7 @@ class _AboutState extends State<About> {
                   width: MediaQuery.of(context).size.width,
                   height: 220,
                   child: Card(
-                    color: Color(0xFF050a10),
+                    color: Colors.white54,
                     child: Padding(
                       padding: const EdgeInsets.only(
                           top: 20.0, left: 15, bottom: 20),
@@ -323,21 +324,22 @@ class _AboutState extends State<About> {
                           Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              "Logo Designer (Ronin)",
+                              "Logo Designer",
                               style: GoogleFonts.ubuntu(
-                                  color: Colors.white, fontSize: 15),
+                                  color: Colors.black, fontSize: 15),
                             ),
                           ),
                           SizedBox(
                             height: 20,
                           ),
                           InkWell(
-                            onTap: ()=> launch("https://www.instagram.com/ron_in_7/"),
+                            onTap: () => launch(
+                                "https://www.instagram.com/georgethedeveloper77"),
                             child: Row(
                               children: [
                                 Icon(
                                   BrandIcons.instagram,
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   size: 25,
                                 ),
                                 SizedBox(
@@ -345,7 +347,7 @@ class _AboutState extends State<About> {
                                 ),
                                 Text("Instagram",
                                     style: GoogleFonts.ubuntu(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 18,
                                         fontWeight: FontWeight.w300)),
                               ],
@@ -356,22 +358,21 @@ class _AboutState extends State<About> {
                           ),
                           InkWell(
                             onTap: () {
-                              launch(
-                                  "http://www.app-icon-designer.com/");
+                              launch("http://www.app-icon-designer.com/");
                             },
                             child: Row(
                               children: [
                                 Icon(
                                   BrandIcons.internetexplorer,
                                   size: 25,
-                                  color: Colors.white,
+                                  color: Colors.black,
                                 ),
                                 SizedBox(
                                   width: 22,
                                 ),
                                 Text("Website",
                                     style: GoogleFonts.ubuntu(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 18,
                                         fontWeight: FontWeight.w300)),
                               ],
@@ -381,20 +382,21 @@ class _AboutState extends State<About> {
                             height: 25,
                           ),
                           InkWell(
-                            onTap: ()=> launch("mailto:roninjude07@gmail.com"),
+                            onTap: () => launch(
+                                "mailto:mindberzerkcustomerservice@gmail.com"),
                             child: Row(
                               children: [
                                 Icon(
                                   Icons.mail,
                                   size: 25,
-                                  color: Colors.white,
+                                  color: Colors.black,
                                 ),
                                 SizedBox(
                                   width: 22,
                                 ),
                                 Text("Email",
                                     style: GoogleFonts.ubuntu(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 18,
                                         fontWeight: FontWeight.w300)),
                               ],
