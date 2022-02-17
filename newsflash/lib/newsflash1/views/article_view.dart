@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class ArticleView extends StatefulWidget {
@@ -16,6 +17,10 @@ class _ArticleViewState extends State<ArticleView> {
   final Completer<WebViewController> _controller =
       Completer<WebViewController>();
 
+  final Shader linearGradient = LinearGradient(
+    colors: <Color>[Color(0xFFec2F4B), Color(0xFF009FFF)],
+  ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,14 +30,12 @@ class _ArticleViewState extends State<ArticleView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "News",
-              style:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+              "NewsFlash",
+              style: GoogleFonts.ubuntu(
+                  foreground: Paint()..shader = linearGradient,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold),
             ),
-            Text(
-              "Flash",
-              style: TextStyle(color: Colors.blue, fontWeight: FontWeight.w600),
-            )
           ],
         ),
         actions: <Widget>[

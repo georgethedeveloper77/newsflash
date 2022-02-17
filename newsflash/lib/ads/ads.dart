@@ -7,7 +7,7 @@ Widget adsContainer() {
     height: 250,
     color: Colors.transparent,
     child: FacebookNativeAd(
-      placementId: "VID_HD_16_9_46S_LINK#445203690576993_445204507243578",
+      placementId: "445203690576993_445204507243578",
       adType: NativeAdType.NATIVE_AD,
       width: double.infinity,
       height: double.infinity,

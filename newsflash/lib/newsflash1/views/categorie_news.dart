@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app_api/newsflash1/helper/news.dart';
 import 'package:news_app_api/newsflash1/helper/widgets.dart';
 
@@ -14,6 +15,10 @@ class CategoryNews extends StatefulWidget {
 class _CategoryNewsState extends State<CategoryNews> {
   var newslist;
   bool _loading = true;
+
+  final Shader linearGradient = LinearGradient(
+    colors: <Color>[Color(0xFFec2F4B), Color(0xFF009FFF)],
+  ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
 
   @override
   void initState() {
@@ -39,20 +44,17 @@ class _CategoryNewsState extends State<CategoryNews> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "News",
-              style:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+              "NewsFlash",
+              style: GoogleFonts.ubuntu(
+                  foreground: Paint()..shader = linearGradient,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold),
             ),
-            Text(
-              "Flash",
-              style: TextStyle(color: Colors.blue, fontWeight: FontWeight.w600),
-            )
           ],
         ),
         actions: <Widget>[
           Opacity(
             opacity: 0,
-
             child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 child: Icon(

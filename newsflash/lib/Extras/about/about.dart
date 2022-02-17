@@ -43,7 +43,7 @@ class _AboutState extends State<About> {
                 padding: const EdgeInsets.only(top: 10.0),
                 child: CachedNetworkImage(
                   imageUrl:
-                      "https://github.com/georgethedeveloper77/newsflash/blob/master/newsflash/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+                      "https://firebasestorage.googleapis.com/v0/b/newsflash-5290e.appspot.com/o/logo.png?alt=media&token=4e96a85e-533c-4532-9b50-f9994fc065c8",
                   height: 200,
                   width: 200,
                 ),
